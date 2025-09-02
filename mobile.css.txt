@@ -1,0 +1,21 @@
+/* mobile.css */
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: red;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+/* Example mobile-only styles */
+.hero h1 {
+  font-size: 2rem;
+}
+
+nav a {
+  margin: 0.5rem 0;
+}

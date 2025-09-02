@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ace Up - Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Modal Styles */
+    .modal-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(6px); /* blur background when modal opens */
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+    }
+    .modal {
+      background: #000; /* black modal */
+      color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    .modal input {
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      width: 100%;
+      margin-bottom: 0.75rem;
+    }
+    .modal button {
+      padding: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .modal { padding: 2.5rem; }
+    }
+  </style>
+
+ <!-- Mobile CSS: applies only if screen < 1024px -->
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 1023px)">
+
+
+  <!-- Desktop CSS: applies only if screen ≥ 1024px -->
+  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1024px)">
+
+
+</head>
+<body class="relative text-white min-h-screen flex flex-col">
+
+  <!-- Background -->
+  <div class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat bg-fixed" 
+       style="background-image: url('images/ACEUP-Land.png');">
+  </div>
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-4 sm:px-8 py-4 fixed top-0 left-0 right-0 bg-black/40 backdrop-blur-md z-50 flex-wrap">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">Ace Up</h1>
+    <nav class="flex flex-wrap items-center gap-2 sm:gap-4 md:gap-6 mt-2 sm:mt-0">
+      <a href="#features" class="hover:text-blue-400 text-base sm:text-lg md:text-xl font-bold">Features</a>
+      <a href="#download" class="hover:text-blue-400 text-base sm:text-lg md:text-xl font-bold">Download</a>
+      <button onclick="openModal('signupModal')" class="w-full sm:w-auto bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition">Sign Up</button>
+      <button onclick="openModal('loginModal')" class="w-full sm:w-auto bg-white text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-blue-200 transition">Log In</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col justify-center items-center text-center flex-grow px-4 sm:px-8 md:px-16 min-h-screen" id="home">
+    <h1 class="font-extrabold leading-tight mb-6 mt-20 text-4xl sm:text-6xl md:text-8xl">
+      Ace Up Your Day,<br> Master Your Way
+    </h1>
+    <p class="text-base sm:text-lg md:text-xl max-w-xs sm:max-w-xl md:max-w-2xl mb-10 opacity-90 font-semibold px-2 sm:px-4 md:px-8 leading-relaxed">
+      AceUp helps you plan, organize, and power through your day —<br>
+      by tracking skills and habits to help you reach your goals.
+    </p>
+    <a href="#features" 
+       class="px-10 sm:px-12 py-4 sm:py-7 text-2xl sm:text-3xl md:text-3xl font-extrabold bg-white text-blue-900 rounded-xl shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-blue-500/50">
+       Ready to AceUp?
+    </a>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="relative py-12 sm:py-16 px-4 sm:px-6 md:px-8">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 sm:mb-12">Features</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10 md:gap-16">
+        <div class="w-full h-56 p-6 rounded-2xl bg-black/50 backdrop-blur-md text-white shadow-lg flex flex-col justify-center">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-center">🎴Deck of the Day</h3>
+          <p class="text-sm sm:text-lg text-center">Personalized daily plan to keep you on track 🎯</p>
+        </div>
+        <div class="w-full h-56 p-6 rounded-2xl bg-black/50 backdrop-blur-md text-white shadow-lg flex flex-col justify-center">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-center">🔥ChallengeX</h3>
+          <p class="text-sm sm:text-lg text-center">Random challenges to boost your spirits ⚡</p>
+        </div>
+        <div class="w-full h-56 p-6 rounded-2xl bg-black/50 backdrop-blur-md text-white shadow-lg flex flex-col justify-center">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-center">🃏SkillUp</h3>
+          <p class="text-sm sm:text-lg text-center">Develop skills and habits step by step 🚀</p>
+        </div>
+        <div class="w-full h-56 p-6 rounded-2xl bg-black/50 backdrop-blur-md text-white shadow-lg flex flex-col justify-center">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-center">🌿Chill Pal</h3>
+          <p class="text-sm sm:text-lg text-center">Your comfort buddy to relax & recharge 🍃</p>
+        </div>
+        <div class="w-full h-56 p-6 rounded-2xl bg-black/50 backdrop-blur-md text-white shadow-lg flex flex-col justify-center">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-center">🎓Professor Ace</h3>
+          <p class="text-sm sm:text-lg text-center">AI tutor to guide you through studies 📚</p>
+        </div>
+        <div class="w-full h-56 p-6 rounded-2xl bg-black/50 backdrop-blur-md text-white shadow-lg flex flex-col justify-center">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-center">🧩Puzzle</h3>
+          <p class="text-sm sm:text-lg text-center">Complete weekly challenges to unlock pieces 🧩</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="flex flex-col justify-center items-center text-center min-h-screen px-4 sm:px-20 md:px-8">
+    <h2 class="text-4xl sm:text-4xl md:text-5xl font-bold mb-6">Download Ace Up</h2>
+    <p class="text-2xl sm:text-lg md:text-lg max-w-xs sm:max-w-xl md:max-w-2xl mb-8 opacity-90 font-semibold">
+      Available soon on iOS and Android. Stay tuned for the ultimate productivity experience.
+    </p>
+    <button class="w-full sm:w-auto px-10 sm:px-16 md:px-15 py-5 sm:py-6 md:py-7 bg-blue-500 text-2xl sm:text-3xl md:text-4xl font-extrabold rounded-2xl shadow-lg hover:bg-blue-600 transform transition duration-300 hover:scale-105 text-bold">Notify Me</button>
+  </section>
+
+  <!-- Social Section -->
+  <section class="py-4">
+    <div class="flex items-center justify-start pl-6 sm:pl-8 md:pl-12 space-x-3">
+      <span class="text-white text-base sm:text-lg md:text-xl font-semibold">Follow us on:</span>
+      <a href="https://instagram.com/aceupmylife" target="_blank" class="hover:scale-110 transform transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+             alt="Instagram" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center bg-black/60 text-sm opacity-70">
+    © 2025 Ace Up | Designed by Team Cyborg 🚀
+  </footer>
+
+<!-- Sign Up Modal -->
+<div id="signupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg w-96 relative">
+    <h2 class="text-2xl font-bold mb-4 text-black">Sign Up</h2>
+    <form>
+      <input type="text" placeholder="Name" class="w-full mb-2 p-2 border rounded text-black placeholder-black" required>
+      <input type="email" placeholder="Email" class="w-full mb-2 p-2 border rounded text-black placeholder-black" required>
+      <input type="password" placeholder="Password" class="w-full mb-2 p-2 border rounded text-black placeholder-black" required>
+      <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition mt-2">Sign Up</button>
+    </form>
+
+    <!-- Close Button -->
+    <button onclick="closeModal('signupModal')" 
+            class="absolute top-2 right-2 text-black font-bold text-xl">
+      ✖
+    </button>
+  </div>
+</div>
+
+<!-- Log In Modal -->
+<div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg w-96 relative">
+    <h2 class="text-2xl font-bold mb-4 text-black">Log In</h2>
+    <form>
+      <input type="email" placeholder="Email" class="w-full mb-2 p-2 border rounded text-black placeholder-black" required>
+      <input type="password" placeholder="Password" class="w-full mb-4 p-2 border rounded text-black placeholder-black" required>
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition mt-2">Log In</button>
+    </form>
+
+    <!-- Close Button -->
+    <button onclick="closeModal('loginModal')" 
+            class="absolute top-2 right-2 text-black font-bold text-xl">
+      ✖
+    </button>
+  </div>
+</div>
+
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+</script>
+
+
+</body>
+</html>

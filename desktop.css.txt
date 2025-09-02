@@ -1,0 +1,20 @@
+/* desktop.css */
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #000; /* just an example */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+}
+
+/* Example desktop-only styles */
+.hero h1 {
+  font-size: 5rem;
+}
+
+nav a {
+  margin-left: 1rem;
+}
