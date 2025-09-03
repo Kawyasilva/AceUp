@@ -1,7 +1,7 @@
 /* mobile.css */
 body {
   font-family: 'Playfair Display', serif;
-  background-color: red;
+  background-color: black;
 }
 
 header {
@@ -19,3 +19,4 @@ header {
 nav a {
   margin: 0.5rem 0;
 }
+
